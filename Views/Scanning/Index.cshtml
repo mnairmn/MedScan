@@ -1,0 +1,22 @@
+﻿<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body onload="doc_loaded()">
+    <h1>Template Creation</h1>
+    <!--p>MedScan's technology works by processing form templates and using these to digitise your all-important data. To get started please click the 'choose file' button below and upload a picture of an empty version of the form from which you would like data to be retrieved.</!--p>
+    <p>Next, by clicking, and dragging, draw boxes around the question fields of your form template. Made a mistake? Click 'Erase'. Have your boxes drawn and ready? Click 'Finish' to be redirected</p>-->
+    <input type="file" id="surveyImage" accept="image/png, image/jpg, image/jpeg">
+    <canvas id="imageCanvas" width="canvasWidth" height="canvasHeight" style="border:1px solid black"
+            onmousemove="mouseMoveHandler(event);"
+            onmousedown="mouseDownHandler(event);"
+            onmouseup="mouseUpHandler(event);"></canvas>
+    <br>
+    <button onclick="loadImage();">Load</button>
+    <button onclick="location.reload();">Erase</button>
+    <button onclick="sendData();">Finish</button>
+    <script src="~/js/site.js/"></script>
+</body>

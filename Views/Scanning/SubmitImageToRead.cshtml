@@ -1,0 +1,28 @@
+﻿@model MedScan.Models.ImageModel
+
+<h4>Form Reader</h4>
+<p>Please copy and paste the file path of the image that you would like to upload to the system for reading. If you are on a Mac, the file path can be found by right clicking on the file in finder and then holding down alt - this should reveal a copy file path option.</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FilePath" class="control-label"></label>
+                <input asp-for="FilePath" class="form-control" />
+                <span asp-validation-for="FilePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" asp-action="Download" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
